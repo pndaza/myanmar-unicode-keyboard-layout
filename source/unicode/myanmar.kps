@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package>
+  <System>
+    <KeymanDeveloperVersion>10.0.1200.0</KeymanDeveloperVersion>
+    <FileVersion>7.0</FileVersion>
+  </System>
+  <Options>
+    <ExecuteProgram></ExecuteProgram>
+    <MSIFileName></MSIFileName>
+    <MSIOptions></MSIOptions>
+  </Options>
+  <StartMenu>
+    <Folder></Folder>
+    <Items/>
+  </StartMenu>
+  <Info>
+    <Version URL="">1.0</Version>
+    <Name URL="">Myanmar</Name>
+  </Info>
+  <Files>
+    <File>
+      <Name>Myanmar.kvk</Name>
+      <Description>File Myanmar.kvk</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.kvk</FileType>
+    </File>
+    <File>
+      <Name>Myanmar.kmx</Name>
+      <Description>Keyboard Myanmar</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.kmx</FileType>
+    </File>
+  </Files>
+  <Keyboards>
+    <Keyboard>
+      <Name>Myanmar</Name>
+      <ID>myanmar</ID>
+      <Version>1.0</Version>
+      <Languages/>
+    </Keyboard>
+  </Keyboards>
+  <Strings/>
+</Package>
