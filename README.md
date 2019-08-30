@@ -1,6 +1,6 @@
 __Myanmar Keyboard Layouts for keyman__
 
-The same layout for legacy win-innwa, standard unicode and non-standard zawgyi.
+The same layout for standard unicode, non-standard zawgyi and legacy  win-innwa.
 
 minumum requirement - Keyman 7 and above.
 
