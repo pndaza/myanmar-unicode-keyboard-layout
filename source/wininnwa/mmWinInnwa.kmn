@@ -4,18 +4,18 @@ c layout style - yayint before constant (visual style)
 c by PnDaza
 c 2018
 
-store(&NAME) 'WinInnwa'
-store(&BITMAP) 'WinInnwa.ico'
-store(&VISUALKEYBOARD) 'WinInnwa.kvks'
+store(&NAME) 'mmWinInnwa'
+store(&BITMAP) 'mmWinInnwa.ico'
+store(&VISUALKEYBOARD) 'mmWinInnwa.kvks'
 
 begin Unicode > use(main)
 
 c most of keys are equal
 c so , key mapping is only for unequal key                        	
 store(remap_key) 	  	'WEYUIO'\
-    	   	   	   	   	'KLBN<.>'     	   	   	   	
+    	   	   	   	   	'KLBN.>'     	   	   	   	
 store(remap) 	  	   	U+0030 U+00A3 U+00FE U+004F U+0046 U+00F3 \
-    	   	   	   	   	U+00FC U+00ED U+00A1 U+00DA U+00E7 U+002E U+00BF
+    	   	   	   	   	U+00FC U+00ED U+00A1 U+00DA U+00E7 U+00BF
 
 store(short_uU)   	   	'kl'
 store(tall_uU)  	   	U+004B U+004C 
@@ -96,14 +96,11 @@ store(lonegyitin)   	U+0064
 store(taetaetin)    	U+0048 
 store(yapint)   	   	U+0073
 store(waswe)    	   	U+0047 
-store(hahtol)   	   	U+0053 
-store(waswe_hahtol)   	U+0054 
+store(hahtol)   	   	U+0053
+store(waswe_hahtol)   	U+0054   
 store(small_hahtol) 	U+00A7
 store(ttdlu)  	   	   	U+0023  U+0058  U+0021 U+0056  U+004F
-store(constantWithLongU) U+0023 U+0058  U+0021 U+0056
-store(asat)             U+0066
       
-    	   	
 group(main) using keys
 
 
@@ -116,15 +113,8 @@ group(main) using keys
 + '~' > U+0061 U+004D U+006F U+006D U+0066      c vowel aww
 + '$' > U+00A4 U+0069 U+0066 U+003B             c 
 + 'M' > U+004F U+0044 
++ '<' > U+00E1   
  
-
-c reorder yayint for unicode like tying
-U+0045 U+00B4 + 'j' >     U+0060  context
-any(double_width) + 'j' > U+004D index(double_width,1)
-any(single_width) + 'j' > U+006A index(single_width,1)
-
-+ 'j' > beep 
-  
 c ##############################
 c   prevent wrong input order
 c ##############################
@@ -140,7 +130,6 @@ U+0037 + any(invalid_for_seven) > beep
 c ################  
 c ### patsints ###
 c ################
-
 c patsint jha
 dk(dkey) + 'Q' > U+00D1 
 
@@ -166,7 +155,6 @@ c dk(dkey) + '!'  	  > U+00D7
 
 U+0021 dk(dkey) + 'B' > U+00B9
 c dk(dkey) + 'B'  	  > U+00B9
-
 
 c nyasint
 U+004F dk(dkey) + any(patsint_key) > U+00CD index(patsint,3)
@@ -229,13 +217,12 @@ U+006E + 'S' > U+006E $small_hahtol
 U+006E + any(below) > U+00F1 index(below,2)
 
 c ###################
-c ### chanhe Na   ###
+c ### change Na   ###
 c ###   and Ra    ###
 c ###   shape     ###
 c ###################
 any(na_ra) + any(na_ra_modifier_key) > index(short_na_ra,1) index(na_ra_modifier,2)
 any(na_ra) $lonegyitin + any(na_ra_modifier_key) > index(short_na_ra,1) $lonegyitin index(na_ra_modifier,3)
-U+0065 $asat + 'k' > U+0045 $asat U+006B
 
 c ######################
 c ###  short u, uu   ###
@@ -244,9 +231,9 @@ c ### ta-chaung-nyin ###
 c ######################
 c after nya ...
 U+006E + any(short) > context index(long,2)
-c after ta, tha, da (third wagga), lagyi and U vowel
+c after ta, tha, da (third wag), lagyi and U vowel
 any(ttdlu) + any(short) > context index(long,2)
-any(ttdlu) $lonegyitin + 'k' > context $long_u          
+any(ttdlu) $lonegyitin + 'k' > context $long_u           
 any(all_nya) any(ab) + any(short) > context index(long,3)
 c any(all_nya) $lonegyitin + any(short) > index(all_nya,1) $lonegyitin index(long,3)
 any(all_nya) any(below) $lonegyitin + any(short) > context index(long,4)
@@ -257,7 +244,6 @@ any(all_width) $yapint $hahtol $lonegyitin + any(short) > context index(long,5)
 c after YaYint .... 
 any(all_ra) any(all_width) + any(short) > context index(long,3)
 any(all_ra) any(all_width) any(ab) + any(short) > context index(long,4)
-any(all_ra) any(all_width) $small_hahtol + any(short) > context index(long,4)
 any(all_ra) any(all_width) any(ab) any(ab) + any(short) > context index(long,5)
 c after waswe ..
 $waswe + any(short) > context index(long,2)
@@ -270,9 +256,8 @@ any(patsint_all) $lonegyitin + any(short) > context index(long,3)
 U+00D8 + 'k' > context $long_u   c after kinzi + longyitin
 $small_hahtol + 'k' > context $long_u
 $small_hahtol $lonegyitin + 'k' > context $long_u
-U+0051 + any(short) > context index(long,2) c  after zamyinswe
-U+0051 $lonegyitin + 'k' > context $long_u c after zamyinswe + lonegyitin
-
+U+0051 + any(short) > context index(long,2) c  after yapint_hahtol
+U+0051 $lonegyitin + 'k' > context $long_u c after yapint_hahtol ...
 
 c ######################
 c ###     move       ###
@@ -295,25 +280,17 @@ U+0049 + 'h' >   context U+0055              c after hahtol + u_vowel
 U+0049 $lonegyitin + 'h' >  context U+0055   c after hahtol + lonegyitin + u_vowel
 $waswe $taetaetin + 'h' > context U+0055
 $hahtol $taetaetin + 'h' > context U+0059
-$waswe_hahtol $taetaetin + 'h' > context U+0055
+$waswe_hahtol $taetaetin + 'h' > context U+0055 
 $yapint $taetaetin + 'h' > context U+0055
 U+0065 $taetaetin + 'h' > context U+0059
 any(patsint_all) $taetaetin + 'h' > context U+0059
-$yapint U+004A + 'h' > context U+0055
-$yapint + 'h' > context U+0055
-U+006B $taetaetin + 'h' > context U+0059
-
-c ######################
-c ####    hahtol to  ###
-c ####  small hahtol ###
-c ######################
-U+0056 + 'S' > context $small_hahtol 
-  
+$yapint U+004A + 'h' > context U+0059
+$yapint + 'h' > context U+0059
 
 c ##################
 c ####  kinzi ++ ###
-c ##################                      
-U+0066 + 'f' > $kinzi   	   	c for faster tying ( i think it faster than shift + I ( key_I )
+c ##################                      c for faster tying ( i think it faster than shift + I ( key_I )
+U+0066 + 'f' > $kinzi
 $kinzi + 's' > $yapint $kinzi   	   	   	   	
 $kinzi + 'd' > U+00D8
 $kinzi + 'D' > U+00D0
@@ -346,17 +323,8 @@ U+00DA + 'm' > U+00D3
 c hahtol + u and UU voewl
 $hahtol + 'k' > U+0049 
 $hahtol $lonegyitin + 'k' > $lonegyitin U+0049 
-$hahtol + 'l' > $hahtol U+004C
-
-c ##############
-c     others
-c ##############
-U+00DA + 'f' > U+004F U+0066 
+$hahtol + 'l' > $hahtol U+004C 
 
 
-c ##################
-c ### back space ###
-c ################## 
-U+006A any(single_width) + [K_BKSP] > index(single_width,2) c single width yayint
-U+004D any(double_width) + [K_BKSP] > index(double_width,2) c double width yayint
+
 
