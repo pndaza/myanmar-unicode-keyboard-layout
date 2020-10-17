@@ -1,0 +1,227 @@
+﻿c
+c My Custom Myanmar Unicode keyboard layout
+c Mostly same as win-innwa layout
+c tinponegyi order  ( tawehtoe first and optional kinzi after constant )
+c 
+
+store(&VERSION) '10.0'
+store(&NAME) 'MyanCode'
+store(&VISUALKEYBOARD) 'myancode.kvks'
+store(&BITMAP) 'myancode.ico'
+c store(&COPYRIGHT) '© 2020 SIL International'
+store(&KEYBOARDVERSION) '1.0'
+store(&TARGETS) 'windows macosx linux web'
+
+begin Unicode > use(main)
+
+group(main) using keys
+
++ [K_SPACE] > U+0020
+
++ [K_1] > '၁'
++ [SHIFT K_1] > 'ဍ'
+
++ [K_2] > '၂'
++ [SHIFT K_2] > 'ဏ္ဍ'
+
++ [K_3] > '၃'
++ [SHIFT K_3] > 'ဋ'
++ [ALT K_3] > U+0023
+
++ [K_4] > '၄'
++ [SHIFT K_4] > '၎'
+
++ [K_5] > '၅'
++ [SHIFT K_5] > '%'
+
++ [K_6] > '၆'
++ [SHIFT K_6] > '/'
+
++ [K_7] > '၇'
++ [SHIFT K_7] > 'ရ'
+
++ [K_8] > '၈'
++ [SHIFT K_8] > 'ဂ'
++ [ALT K_8] > U+002A
+
++ [K_9] > '၉'
++ [SHIFT K_9] > U+0028
+
++ [K_0] > '၀'
++ [SHIFT K_0] > U+0029
+
++ [K_A] > U+200b U+1031
++ [SHIFT K_A] > 'ဗ'
++ [ALT K_A] > U+1031
+
++ [K_B] > 'ဘ'
++ [SHIFT K_B] > 'ဎ'
+
++ [K_C] > 'ခ'
++ [SHIFT K_C] > 'ဃ'
+
++ [K_D] > 'ိ'
++ [SHIFT K_D] > 'ီ'
+
++ [K_E] > 'န'
++ [SHIFT K_E] > 'ဣ'
+
++ [K_F] > '်'
++ [SHIFT K_F] > '္'
+
++ [K_G] > 'ါ'
++ [SHIFT K_G] > 'ွ'
+
++ [K_H] > '့'
++ [SHIFT K_H] > 'ံ'
+
++ [K_I] > 'င'
++ [SHIFT K_I] > U+200b U+1004 U+103a U+1039
+
++ [K_J] > 'ြ'
++ [SHIFT K_J] > 'ဲ'
+
++ [K_K] > 'ု'
++ [SHIFT K_K] > '၌'
+
++ [K_L] > 'ူ'
++ [SHIFT K_L] > '၍'
+
++ [K_M] > 'ာ'
++ [SHIFT K_M] > 'ဦ'
+
++ [K_N] > 'ည'
++ [SHIFT K_N] > 'ဉ'
+
++ [K_O] > 'သ'
++ [SHIFT K_O] > 'ဿ'
+
++ [K_P] > 'စ'
++ [SHIFT K_P] > 'ဏ'
+
++ [K_Q] > 'ဆ'
++ [SHIFT K_Q] > 'ဈ'
+
++ [K_R] > 'မ'
++ [SHIFT K_R] > U+103b U+103d
+
++ [K_S] > 'ျ'
++ [SHIFT K_S] > 'ှ'
+
++ [K_T] > 'အ'
++ [SHIFT K_T] > U+1062 U+1063 U+103a
+
++ [K_U] > 'က'
++ [SHIFT K_U] > 'ဥ'
+
++ [K_V] > 'လ'
++ [SHIFT K_V] > 'ဠ'
+
++ [K_W] > 'တ'
++ [SHIFT K_W] > 'ဝ'
+
++ [K_X] > 'ထ'
++ [SHIFT K_X] > 'ဌ'
+
++ [K_Y] > 'ပ'
++ [SHIFT K_Y] > 'ဤ'
+
++ [K_Z] > 'ဖ'
++ [SHIFT K_Z] > 'ဇ'
+
++ [K_HYPHEN] > U+002d
++ [SHIFT K_HYPHEN] > U+00d7
++ [ALT K_HYPHEN] > U+005F
+
++ [K_EQUAL] > U+003d
++ [SHIFT K_EQUAL] > U+002b
+
++ [K_COLON] > 'း'
++ [SHIFT K_COLON] > U+003a
+
++ [K_BKQUOTE] > 'ဩ'
++ [SHIFT K_BKQUOTE] > 'ဪ'
+
++ [K_COMMA] > 'ယ'
++ [SHIFT K_COMMA] > 
++ [ALT K_COMMA] > U+002c
++ [SHIFT K_COMMA] > U+003C
+
+
++ [K_PERIOD] > U+002e
++ [SHIFT K_PERIOD] > 
+
++ [K_LBRKT] > 'ဟ'
++ [SHIFT K_LBRKT] > 'ဧ'
++ [ALT K_LBRKT] > U+005b
++ [SHIFT ALT K_LBRKT] > u+007b
+
++ [K_RBRKT] > U+2018
++ [SHIFT K_RBRKT] > U+2019
++ [ALT K_RBRKT] > U+005d
++ [SHIFT ALT K_RBRKT] > U+007d
+
++ [K_BKSLASH] > '၏'
++ [SHIFT K_BKSLASH] > U+100b U+1039 U+100c
++ [ALT K_BKSLASH] > U+005C
++ [ALT SHIFT K_BKSLASH] > U+007C
+
++ [K_QUOTE] > 'ဒ'
++ [SHIFT K_QUOTE] > 'ဓ'
++ [ALT K_QUOTE] > U+0027
++ [ALT SHIFT K_QUOTE] > U+0027
+
++ [K_SLASH] > '။'
++ [SHIFT K_SLASH] > '၊'
++ [ALT K_SLASH] > U+002F
++ [ALT SHIFT K_SLASH] > U+003f
+
+
+
+c mitigating ​ေ U+1031 issues
+
+store(consonants) 'ကခဂဃငစဆဇဈဉညဋဌဍဎဏတထဒဓနပဖဗဘမယရလဝသဟဠအဿ'
+store(medial)   'ျွှြ'
+store(virama)   '္'
+store(yapint)   'ျ'
+store(yayint)   'ြ'
+c store(kinzi)    'င်္' 
+
+
+match > use(normalise)
+
+group(normalise)
+
+c ​ေ U+1031 attached to prebuild double consonant ဏ္ဍ ဋ္ဌ
+U+200b U+1031 'ဏ္ဍ' > 'ဏ္ဍ' context(2)
+U+200b U+1031 'ဋ္ဌ' > 'ဋ္ဌ' context(2)
+
+c ​ေ U+1031 attached to single consonant
+U+200b U+1031 any(consonants) > context(3) context(2)
+
+c ​ေ U+1031 attached to consonant and medial
+U+1031 any(medial) any(medial) > context(2) context(3) context(1)
+U+1031 any(medial) > context(2) context(1)
+
+c ​ေ U+1031 attached to double consonant
+any(consonants) U+1031 $virama any(consonants) > context(1) context(3) context(4) context(2)
+
+
+c reordering kinzi ( i prefer to type kinzi after consonant )
+any(consonants) U+200b  'င်္' >  'င်္' context(1)
+any(consonants) U+1031 U+200b  'င်္' >  'င်္' context(1) context(2)
+any(consonants) any(medial) U+200b 'င်္'  > 'င်္' context(1) context(2)
+any(consonants) any(medial) U+1031 U+200b 'င်္'  > 'င်္' context(1) context(2) context(3)
+
+c  double tap kinzi
+any(consonants) U+103a U+103a >  'င်္' context(1)
+any(consonants) U+1031 U+103a U+103a >  'င်္' context(1) context(2)
+any(consonants) any(medial) U+103a U+103a  > 'င်္' context(1) context(2)
+any(consonants) any(medial) U+1031 U+103a U+103a  > 'င်္' context(1) context(2) context(3)
+
+c two single quote to double quoute
+U+2018 U+2018 > U+201c
+U+2019 U+2019 > U+201d
+U+0027 U+0027 > U+0022
+
+c eof

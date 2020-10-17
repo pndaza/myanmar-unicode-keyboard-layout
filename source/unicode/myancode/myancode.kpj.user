@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<KeymanDeveloperProjectUser>
+  <ViewState>
+    <tab>3</tab>
+    <showhelp>1</showhelp>
+    <path>C:\Users\pndaza\Desktop\myanmar-unicode-keyboard-layout\source\unicode\myancode\myancode.kpj</path>
+    <file ID="id_MRU0" Expanded="1"/>
+  </ViewState>
+  <FileStates>
+    <FileState>
+      <ID>id_550f97f07f29d8c0cbfdbff62d9322f0</ID>
+      <FullPath>C:\Users\pndaza\Desktop\myanmar-unicode-keyboard-layout\source\unicode\myancode\myancode.kmn</FullPath>
+      <IDEState>
+        <LayoutDisplay102Key>0</LayoutDisplay102Key>
+        <DebugDefaultFont>1</DebugDefaultFont>
+        <DebugFont>MS Sans Serif|8|   |1</DebugFont>
+        <CodeFont>Consolas|-9|   |0</CodeFont>
+        <CharFont>Consolas|-9|   |0</CharFont>
+      </IDEState>
+      <Debug>False</Debug>
+    </FileState>
+    <FileState>
+      <ID>id_47b8970dd9ec0748a693f75020649009</ID>
+      <FullPath>C:\Users\pndaza\Desktop\myanmar-unicode-keyboard-layout\source\unicode\myancode\myancode.ico</FullPath>
+    </FileState>
+    <FileState>
+      <ID>id_8142a0fe72e46e42f78b569a92246cb2</ID>
+      <FullPath>C:\Users\pndaza\Desktop\myanmar-unicode-keyboard-layout\source\unicode\myancode\myancode.kps</FullPath>
+      <IDEState>
+        <CodeFont>Consolas|-9|   |0</CodeFont>
+        <CharFont>Consolas|-9|   |0</CharFont>
+      </IDEState>
+    </FileState>
+    <FileState>
+      <ID>id_7fd1683cc0ae9fe6cfdd46819c2edb28</ID>
+      <FullPath>C:\Users\pndaza\Desktop\myanmar-unicode-keyboard-layout\source\unicode\myancode\myancode.kvk</FullPath>
+    </FileState>
+    <FileState>
+      <ID>id_3fb2a54d9c81d86c507aeac9fd68f2ed</ID>
+      <FullPath>C:\Users\pndaza\Desktop\myanmar-unicode-keyboard-layout\source\unicode\myancode\myancode.kmx</FullPath>
+    </FileState>
+  </FileStates>
+  <MRU>
+    <File>
+      <ID>id_MRU0</ID>
+      <Filename>myancode.kmn</Filename>
+      <FileType>.kmn</FileType>
+      <FullPath>C:\Users\pndaza\Desktop\myanmar-unicode-keyboard-layout\source\unicode\myancode\myancode.kmn</FullPath>
+    </File>
+    <File>
+      <ID>id_MRU1</ID>
+      <Filename>myancode.kps</Filename>
+      <FileType>.kps</FileType>
+      <FullPath>C:\Users\pndaza\Desktop\myanmar-unicode-keyboard-layout\source\unicode\myancode\myancode.kps</FullPath>
+    </File>
+  </MRU>
+</KeymanDeveloperProjectUser>

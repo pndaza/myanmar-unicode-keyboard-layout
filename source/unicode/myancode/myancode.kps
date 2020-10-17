@@ -15,32 +15,28 @@
   </StartMenu>
   <Info>
     <Version URL="">1.0</Version>
-    <Name URL="">Myanmar</Name>
-    <Copyright URL="">© NO</Copyright>
-    <Author URL="">pndaza</Author>
+    <Name URL="">MyanCode</Name>
   </Info>
   <Files>
     <File>
-      <Name>Myanmar.kvk</Name>
-      <Description>File Myanmar.kvk</Description>
+      <Name>myancode.kvk</Name>
+      <Description>File myancode.kvk</Description>
       <CopyLocation>0</CopyLocation>
       <FileType>.kvk</FileType>
     </File>
     <File>
-      <Name>Myanmar.kmx</Name>
-      <Description>Keyboard Myanmar</Description>
+      <Name>myancode.kmx</Name>
+      <Description>Keyboard MyanCode</Description>
       <CopyLocation>0</CopyLocation>
       <FileType>.kmx</FileType>
     </File>
   </Files>
   <Keyboards>
     <Keyboard>
-      <Name>Myanmar</Name>
-      <ID>myanmar</ID>
-      <Version>1.5</Version>
-      <Languages>
-        <Language ID="my-Mymr">Burmese (Myanmar)</Language>
-      </Languages>
+      <Name>MyanCode</Name>
+      <ID>myancode</ID>
+      <Version>1.0</Version>
+      <Languages/>
     </Keyboard>
   </Keyboards>
   <Strings/>

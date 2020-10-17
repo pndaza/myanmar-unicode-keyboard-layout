@@ -1,28 +1,20 @@
 ﻿c smart keyboard layout for myanmar (standrad unicode) 
-c visual order  ( tawehtoe first)
+c visual order  ( tawehtoe and yayint first)
 c same layout to win-innwa(ascii) and zawgyi(non standard unicode)
 c by PnDaza
 c 2018
 
-  
-store(&VERSION) "9.0"
-store(&NAME) 'Myanmar' 
-store(&BITMAP) 'Myanmar.ico'
-store(&VISUALKEYBOARD) 'Myanmar.kvks'
-store(&TARGETS) 'windows macosx linux desktop'
-store(&KEYBOARDVERSION) '1.5'
-store(&ETHNOLOGUECODE) 'mya'
-store(&COPYRIGHT) '© pndaza'
 
-  
-begin Unicode > use(main)
+store(&NAME) 'mmMyanmar'
+store(&BITMAP) 'mmMyanmar.ico'
+store(&VISUALKEYBOARD) 'mmMyanmar.kvks'
 
 c keys mapping
 c 12+12 keys
 store(rowone_en)   	    "`1234567890-=" \
-    	   	   	   	   	"~!#$%^&*()_+"
+    	   	   	   	   	"~!@#$%^&*()_+"
 store(rowone_mm)    	U+1029 U+1041 U+1042 U+1043 U+1044 U+1045 U+1046 U+1047 U+1048 U+1049 U+1040 U+002D U+003D \
-    	   	   	   	   	U+102A U+100D U+100B U+104E U+0025 U+002F U+101B U+1002 U+0028 U+0029 U+00D7 U+002B
+    	   	   	   	   	U+102A U+100D U+1091 U+100B U+104E U+0025 U+002F U+101B U+1002 U+0028 U+0029 U+00D7 U+002B
 
 c 12+5 keys
 store(rowtwo_en)    	"qwertyuiop[]" \
@@ -40,17 +32,16 @@ c 10+7 keys
 store(rowfour_en)       "zxcvbnm,./" \
     	   	   	   	   	"ZXCVBNM<>?"                                
 store(rowfour_mm)       U+1016 U+1011 U+1001 U+101C U+1018 U+100A U+102C U+101A U+002E U+104B \
-    	   	   	   	   	U+1007 U+100C U+1003 U+1020 U+100E U+1009 U+1026 U+002C U+003F U+104A 
+    	   	   	   	   	U+1007 U+100C U+1003 U+1020 U+100E U+1009 U+1026 U+002C U+003F U+104A
+    	   	   	   	   	
+store(all)  	   	   	outs(rowone_mm) outs(rowtwo_mm) outs(rowthree_mm) outs(rowfour_mm) 
 
-store(filler)           U+200B
-store(vowelE_en)        'a'
-store(vowelE_mm)        U+1031
 
 store(virama)   	   	U+1039
 store(e)    	   	   	U+1031
 store(yayint)   	   	U+103C
 store(yapint)   	   	U+103B
-store(kinzi)    	   	U+1004 U+103A U+1039 
+store(kinzi)    	   	U+1004 U+103A U+1039
 
 c for prevent wrong input order
 store(after_ya) 	   	U+103D U+103E U+102D U+102E U+1030 U+1032 U+1036 U+102F
@@ -61,8 +52,7 @@ store(after_u)  	   	U+1036
 store(last) 	   	   	U+1037
 store(before_last)  	'HJk'
 store(seven_zero)   	U+1047 U+1040
-store(invalid_for_seven_zero)   	'SdDgGHJkl'  
-
+store(invalid_for_seven_zero)   	'SDgGHJkl'   c sometiems, lonegyitin is writed above number. so it is omitted.
 
 store(consK)        'uc*CipqZ' \
     	   	   	   	'QNn#X!BP' \
@@ -77,8 +67,12 @@ store(consU)    	U+1000 U+1001 U+1002 U+1003 U+1004 U+1005 U+1006 U+1007 \
 		  	   	   	U+1018 U+1019 U+101A U+101B U+101C U+101D U+101E U+101F \
 		  	   	   	U+1020 U+1021
 
-store(medialK)   	'sjSG' 
-store(medialU)   	U+103B U+103C U+103E U+103D
+store(medialK)   	'sGS'         	   	   	c medial_ra(yayint) is omitted 
+store(medialU)   	U+103B U+103D U+103E    c to tpye it before constant
+ 
+
+  
+begin Unicode > use(main)
 
 group(main) using keys
 
@@ -111,43 +105,39 @@ c numpad key mapping
 + [K_NPSLASH] > 	U+002F 
 
 
-+ any(vowelE_en) > outs(filler) outs(vowelE_mm)
-
+c deadkey
+c + "F" > dk(dkey)
 
 + any(rowone_en) > index(rowone_mm,1)
 + any(rowtwo_en) > index(rowtwo_mm,1)
 + any(rowthree_en) > index(rowthree_mm,1)
 + any(rowfour_en) > index(rowfour_mm,1)
 
-
-c dk(dkey) + 'j' > U+E1B2
-c U+E1B2 + 'd' > U+E1B7
-c U+E1B2 + 'G' > U+E1BC 
-c dk(dkey) + 'k' > U+E2F1
-c dk(dkey) + 'k' > U+E2F1 
-
 + 'R' > U+103B U+103D
 + 'T' > U+103D U+103E
-+ ':' > U+102B U+103A 
++ ':' > U+102B U+103A
++ 'I' > U+103E U+102F 
 + '@' > U+100F U+1039 U+100D 
 + '|' > U+100B U+1039 U+100C
 + '$' > U+104E U+1004 U+103A U+1038   
 
 + 'a' > U+200B U+1031
-+ [ALT K_A] > U+1031
-+ 'j' > U+103C 
+
 
 U+1005 + 's' > U+1008 
 U+1025 + 'D' > U+1026
-U+101E + 'j' > U+1029
-U+101E U+103C U+1031 U+102C + 'f' > U+102A   
+U+200B U+103C + 'o' > U+1029
+U+200B U+103C U+101E U+1031 U+102C + 'f' > U+102A   
 
 
 c e_vowel
 + $e > U+200B $e
 
-
-
+c yayint
+c U+200B $e + 'j' > $e $yayint 
+U+200B $e + 'j' > U+200B $yayint $e
++ 'j' > U+200B U+103C
+ 
 c ##############################
 c   prevent wrong input order
 c ##############################
@@ -160,61 +150,54 @@ any(after_u) + 'k' > beep c taetaetin + u
 $last + any(before_last) > beep
 any(seven_zero) + any(invalid_for_seven_zero) > beep
 
+c ######################
+c   reordering e_vowel
+c #####################
 
-
-c #######################
-c    reordering e_vowel
-c #######################
-c U+200B $e +  'Q' > U+1008 $e    c jha
 U+200B $e + any(consK) > index(consU,3) $e
-U+200B $e +  'O' > U+103F $e    c sagyi
 U+200B $e + '|' > U+100B U+1039 U+100C $e c
-U+200B $e + '@' > U+100F U+1039 U+100D $e c  
-any(consU) $e + 'I' > outs(kinzi) index(consU,1) $e
+U+200B $e + '@' > U+100F U+1039 U+100D $e c 
+any(consU) $e + 'I' > outs(kinzi) index(consU,1) $e  
 any(consU) $e U+103A + 'f' > outs(kinzi) index(consU,1) $e
-c U+1014 U+103C $e dk(dkey) + "'" > U+1014 $virama U+1012 U+103C $e c indre
+U+200B $yayint $e + any(consK) > index(consU,4) $yayint $e c indre
+U+1014 U+103C $e $virama + "'" > U+1014 $virama U+1012 U+103C $e c indre
 $e $virama + any(consK) > $virama index(consU,3) $e c patsint
-$e + any(medialK) > index(medialU,2) $e  
+$e $yayint + any(consK) > index(consU,3) $yayint $e
+$e + any(medialK) > index(medialU,2) $e
 
 $e + 'R' > U+103B U+103D $e
-$e + 'T' > U+103D U+103E $e 
+$e + 'T' > U+103D U+103E $e  
+
+c ######################
+c   reodering yayint
+c ######################
+
+U+200B $yayint + any(consK) > index(consU,3) $yayint
+U+1014 $yayint $e $virama + "'" > U+1014 $virama U+1012 $yayint $e c ဣန္ဒြေ
+U+1014 $yayint $virama + "'" > U+1014 $virama U+1012 $yayint c ဣန္ဒြ
+c any(consU) $yayint U+103A + 'f' > outs(kinzi) index(consU,1) $yayint
+
++ 'Q' > U+103B U+103E
++ 'R' > U+103B U+103D
++ 'T' > U+103D U+103E 
 
 c ###############
 c ###  kinzi  ###
 c ###############
+
 any(consU) $yayint + 'I' > outs(kinzi) index(consU,1) $yayint c yayint + kinzi
 any(consU) $yapint + 'I' > outs(kinzi) index(consU,1) $yapint c yapint + kinzi
 any(consU) $yapint $e + 'I' > outs(kinzi) index(consU,1) $yapint $e c tawethoe + yapint + kinzi
 any(consU) + 'I' > outs(kinzi) index(consU,1)
 
-any(consU) $yayint U+103A + 'f' > outs(kinzi) index(consU,1) $yayint c yayint + kinzi
 any(consU) $yapint U+103A + 'f' > outs(kinzi) index(consU,1) $yapint c yapint + kinzi
 any(consU) $yapint $e U+103A + 'f' > outs(kinzi) index(consU,1) $yapint $e c tawethoe + yapint + kinzi
 any(consU) U+103A + 'f' > outs(kinzi) index(consU,1)
 
 + 'I' > outs(kinzi) U+0020 c some time we need to show as example
 
-c patsint (stacked Constants)
+c patsint (stacked Constant)
 c dk(dkey) + any(consK) > $virama index(consU,2)
-
-c puncutation
-U+2018 + ']' > U+201C
-U+2019 + '}' > U+201D
-
-c sanskrit
-+ [ALT K_8] > U+1050
-+ [ALT K_Y] > U+1051
-+ [ALT K_U] > U+1052
-+ [ALT K_I] > U+1053
-+ [ALT K_O] > U+1054
-+ [ALT K_P] > U+1055
-+ [SHIFT ALT K_U] > U+1056
-+ [SHIFT ALT K_I] > U+1057
-+ [SHIFT ALT K_O] > U+1058
-+ [SHIFT ALT K_P] > U+1059
-
-+ [ALT K_LBRKT] > U+005B
-+ [ALT K_RBRKT] > U+005D
 
 c ##################
 c ### back space ###
@@ -227,3 +210,7 @@ U+1004 U+103A U+1039 any(consU) + [K_BKSP] > index(consU, 4)
 U+1004 U+103A U+1039 any(consU) U+1031 + [K_BKSP] > index(consU, 4) U+1031
 $virama any(consU) U+1031 + [K_BKSP] > U+1031
 $virama any(consU) + [K_BKSP] > nul
+
+any(consU) $yayint + [K_BKSP] > U+200B $yayint
+any(consU) $yayint $e + [K_BKSP] > U+200B $yayint $e
+

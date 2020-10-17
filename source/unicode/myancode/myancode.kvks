@@ -2,8 +2,10 @@
 <visualkeyboard>
   <header>
     <version>10.0</version>
-    <kbdname>Myanmar</kbdname>
-    <flags/>
+    <kbdname>myancode</kbdname>
+    <flags>
+      <displayunderlying/>
+    </flags>
   </header>
   <encoding name="unicode" fontname="Pyidaungsu" fontsize="9">
     <layer shift="">
